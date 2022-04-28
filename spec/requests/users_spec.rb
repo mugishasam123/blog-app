@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  describe 'GET "/users" ' do
+  describe 'GET /index ' do
     before(:example) { get '/users' }
 
     it 'check if the response is successful' do
@@ -17,7 +17,7 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'GET "/users/4" ' do
+  describe 'GET /show ' do
     before(:example) { get '/users/4' }
 
     it 'check if the response is successful' do

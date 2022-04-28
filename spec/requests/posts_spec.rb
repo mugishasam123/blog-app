@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'ffi'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET "/users/1/posts" ' do
+  describe 'GET /index" ' do
     before(:example) { get '/users/1/posts' }
 
     it 'check if the response is successful' do
@@ -18,7 +18,7 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'GET "/users/1/posts/3" ' do
+  describe 'GET /show ' do
     before(:example) { get '/users/1/posts/3' }
 
     it 'check if the response is successful' do
