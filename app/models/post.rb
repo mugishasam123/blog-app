@@ -11,8 +11,6 @@ class Post < ApplicationRecord
   private
 
   def update_posts_counter
-    @users.each do |user|
-      user.update_column(:PostsCounter, user.posts.count) if user.id == author_id
-    end
+    author.increment!(:PostsCounter)
   end
 end

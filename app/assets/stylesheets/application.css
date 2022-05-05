@@ -1,15 +1,107 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  padding: 20px;
+}
+
+a {
+  color: blue;
+}
+
+.user-item {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  align-items: center;
+}
+
+.home-title {
+  text-align: center;
+}
+
+.user-photo {
+  background-color: green;
+  height: 100%;
+  width: 120px;
+}
+
+.user-details {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  background-color: beige;
+  padding: 20px;
+}
+
+.homepage,
+.user-section,
+.post-index {
+  display: grid;
+  gap: 30px;
+}
+
+.user-list {
+  display: grid;
+  gap: 20px;
+}
+
+.bio-wrapper {
+  background-color: red;
+  padding: 20px;
+}
+
+.most-recent-posts {
+  display: grid;
+  gap: 20px;
+}
+
+.post,
+.post-details,
+.post-list {
+  display: grid;
+  gap: 10px;
+}
+
+.post {
+  background-color: beige;
+  padding: 20px;
+}
+
+.all-posts {
+  padding: 8px;
+  width: 120px;
+  text-align: center;
+  margin: auto;
+}
+
+.comments-wrapper {
+  margin-top: 7px;
+  display: grid;
+  gap: 5px;
+}
+
+.comment {
+  background-color: bisque;
+}
+
+.post-wrapper {
+  display: grid;
+  gap: 30px;
+  background-color: beige;
+  padding: 30px;
+}
+
+.top-wrapper {
+  display: flex;
+  justify-content: space-between;
+}

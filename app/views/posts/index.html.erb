@@ -1,2 +1,22 @@
-<h1>Posts#index</h1>
-<p>Here are list of posts by user <%= params[:user_id]%> </p>
+<section class="post-index">
+    <div class="user-item">
+        <img class="user-photo" src="<%=@user.Photo%>" alt="<%=@user.Name%>">
+        <div class="user-details">
+            <a class="user-name" href="/users/<%=@user.id%>">
+                <%=@user.Name%>
+            </a>
+            <h3 class="post-number">
+                Number of Posts:<%=@user.posts.size%>
+            </h3>
+        </div>
+
+    </div>
+
+    <ul class="post-list">
+        <% @user.posts.each do |post|%>
+            <li class="post">
+                <%= render "post" , post:post%>
+            </li>
+            <%end%>
+    </ul>
+</section>

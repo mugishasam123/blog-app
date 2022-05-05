@@ -1,0 +1,31 @@
+<section>
+    <div class="post-section">
+        <div class="post-details">
+            <%= link_to user_post_path(@user.id,post.id) do%>
+                <h3 class="post-title">
+                  Post  <%=post.Title%>
+                </h3>
+                <%end%>
+                    <p class="post-text">
+                        <%=post.Text%>
+                    </p>
+        </div>
+        <div class="comments-likes" align="right">
+            <span>Comments:<%=post.comments.size%></span>
+            <span>Likes:<%=post.likes.size%></span>
+        </div>
+    </div>
+
+
+
+    <ul class="comments-wrapper">
+        <% post.most_recent_comments.each do |comment|%>
+            <li class="comment">
+                <span class="comment-inner">
+                    <%=comment.author.Name%> : <%=comment.Text%>
+                </span>
+            </li>
+            <%end%>
+    </ul>
+
+</section>
