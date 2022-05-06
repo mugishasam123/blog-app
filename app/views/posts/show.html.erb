@@ -4,7 +4,6 @@
             <h3 class="post-title">
                 Post <%=@post.Title %> by <%=@post.author.Name%>
             </h3>
-
             <div class="comments-likes" align="right">
                 <span>Comments:<%=@post.comments.size%></span>
                 <span>Likes:<%=@post.likes.size%></span>
@@ -13,21 +12,22 @@
         <p>
             <%=@post.Text%>
         </p>
-
+        <%= form_with model:@like,url: post_likes_path(@post.id), method: :post, local: true do |f|%>
+            <%= f.submit "Add like" , class: "btn-post"  %>
+         <%end%>
     </div>
     <div class="comments-section">
+
+
+
         <h3>Comments</h3>
         <ul class="comments-wrapper">
             <%@post.comments.each do |comment|%>
-                <li class="comment">
-                    <span class="comment-inner">
-                        <%=comment.author.Name%>: <%=comment.Text%>
-                    </span>
-                </li>
-
-                <%end%>
-
+                <%= render "comment" ,comment:comment%>
+                    <%end%>
         </ul>
+        <%= link_to "Back" , :back , class: "back" %>
     </div>
+    <%= render "comments/new" %>
 
 </section>
