@@ -21,11 +21,11 @@ class PostsController < ApplicationController
     @post.CommentsCounter = 0
 
     if @post.save
-      flash[:notice] = 'The post have been created successfully'
-      redirect_to user_posts_path(@post.author_id)
+     
+      redirect_to user_posts_path(@post.author_id), success: "The post have been created successfully"
     else
-      flash[:alert] = 'Adding a new post failed.'
-      render :new, status: :unprocessable_entity
+    
+      render :new, status: :unprocessable_entity, info: "Adding a new post failed."
     end
   end
 
