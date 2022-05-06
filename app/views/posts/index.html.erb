@@ -5,11 +5,14 @@
             <a class="user-name" href="/users/<%=@user.id%>">
                 <%=@user.Name%>
             </a>
-            <h3 class="post-number">
+            <h3 class="post-number" align="right" >
                 Number of Posts:<%=@user.posts.size%>
             </h3>
+            <% if @current_user && @current_user.id == @user.id%>
+            <%= link_to "New post", new_user_post_path(@user.id) %>
+           <% end %>
         </div>
-
+       
     </div>
 
     <ul class="post-list">
