@@ -11,10 +11,10 @@ class CommentsController < ApplicationController
 
     if @comment.save
 
-      redirect_to user_posts_path(@comment.author.id), success:"Comment has been created successfully"
+      redirect_to user_posts_path(@comment.author.id), success: 'Comment has been created successfully'
     else
-   
-      render :_comment_form, info: "The comment adding failed."
+
+      render :_comment_form, info: 'The comment adding failed.'
     end
   end
 
