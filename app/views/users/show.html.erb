@@ -1,22 +1,3 @@
 <section class="user-section">
-    <%= render "user" ,user:@user%>
-        <div class="bio-wrapper">
-            <h3 class="bio-title">Bio</h3>
-            <p class="bio-text">
-                <%= @user.Bio%>
-            </p>
-        </div>
-        <ul class="most-recent-posts">
-            <% @user.most_recent_posts.each do |post|%>
-                <li class="post">
-                    <%= render "post" ,post:post%>
-                </li>
-                <%end%>
-        </ul>
-        <button class="all-posts">
-            <%= link_to user_posts_path(@user.id) do%>
-                See All Posts
-                <%end%>
-        </button>
 
 </section>
