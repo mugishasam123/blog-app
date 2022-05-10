@@ -106,9 +106,9 @@ a {
   justify-content: space-between;
 }
 
-.login>form{
+.login > form {
   display: grid;
- gap: 20px;
- align-items: center;
- justify-content: center;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
