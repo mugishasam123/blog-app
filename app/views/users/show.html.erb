@@ -1,5 +1,5 @@
 <section class="user-section">
-    <%if user_signed_in?%>
+   
         <%= render "user" ,user:@user%>
             <div class="bio-wrapper">
                 <h3 class="bio-title">Bio</h3>
@@ -19,25 +19,7 @@
                     See All Posts
                     <%end%>
             </button>
-            <%= button_to "Sign out" , destroy_user_session_path, :method=> :delete %>
-                <%= link_to 'Edit Account' ,edit_user_registration_path%>
-                    <%else%>
-                        <div class="login">
-
-                            <%= form_tag new_user_session_path do %>
-                                <div class="field">
-                                    <%= label_tag :email %><br />
-                                        <%= email_field_tag :email,"Email" %>
-                                </div>
-                                <div class="field">
-                                    <%= label_tag :password %><br />
-                                        <%= password_field_tag :password, "Password" %>
-                                </div>
-                                <%= submit_tag 'Login' %>
-
-                                    <%end%>
-
-                        </div>
-
-                        <%end%>
+          
+                <%= link_to 'Back', :back%>
+                   
 </section>

@@ -25,6 +25,7 @@
       <%= f.label :Bio %><br />
       <%= f.text_area :Bio, autocomplete: "bio" %>
     </div>
+    <%= f.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %>
     <%= f.hidden_field :PostsCounter, value: 0 %>
     <div class="field">
       <%= f.label :password %>

@@ -92,6 +92,9 @@ a {
 
 .comment {
   background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
 }
 
 .post-wrapper {

@@ -11,11 +11,21 @@ class CommentsController < ApplicationController
 
     if @comment.save
 
-      redirect_to user_posts_path(@comment.author.id), success: 'Comment has been created successfully'
+      redirect_to user_post_path(@post.author_id, @post.id), success: 'Comment has been created successfully'
     else
 
       render :_comment_form, info: 'The comment adding failed.'
     end
+  end
+
+  def destroy
+    post = Post.find(params[:post_id])
+    comment = post.comments.find(params[:id])
+    post.CommentsCounter = -1
+    comment.destroy
+    post.save
+    flash[:success] = 'You have deleted this comment successfully!'
+    redirect_to user_post_path(post.author_id, post.id)
   end
 
   private
