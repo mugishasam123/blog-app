@@ -1,4 +1,7 @@
 <section>
+<% if can? :manage, @post %>
+<%= button_to "Delete Post", post_path(@post.id), method: :delete, class: 'delete-btn click' %>
+<% end %>
     <div class="post-wrapper">
         <div class="top-wrapper">
             <h3 class="post-title">
