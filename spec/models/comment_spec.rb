@@ -1,18 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  before(:each) do
-    @comment = Comment.new(author_id: 11, post_id: 13)
-  end
+  describe 'Validations For the Comment model' do
+    before(:each) do
+      @comment = Comment.new(Text: 'One comment', author_id: 11, post_id: 32)
+    end
 
-  before { @comment.save }
+    before { @comment.save }
 
-  it 'if author is present' do
-    @comment.author_id = nil
-    expect(@comment).to_not be_valid
-  end
-  it 'if post is present' do
-    @comment.post_id = nil
-    expect(@comment).to_not be_valid
+    it 'if title is present' do
+      @comment.Text = nil
+      expect(@comment).to_not be_valid
+    end
+
+    it 'if author_id is integer' do
+      @comment.author_id = 'W'
+      expect(@comment).to_not be_valid
+    end
+
+    it 'if post_id is integer' do
+      @comment.post_id = 'Q'
+      expect(@comment).to_not be_valid
+    end
   end
 end
