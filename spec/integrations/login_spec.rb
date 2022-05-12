@@ -1,9 +1,7 @@
 require 'rails_helper'
 
-
 RSpec.feature 'Tests for the login page', type: :feature do
-
-  background{visit new_user_session_path}
+  background { visit new_user_session_path }
 
   scenario 'can user see login form' do
     expect(page.has_field?('Email')).to be true
@@ -12,7 +10,6 @@ RSpec.feature 'Tests for the login page', type: :feature do
   end
 
   context 'form submission' do
-
     scenario 'when form is submitted without data' do
       click_button 'Log in'
       expect(page).to have_content('Invalid Email or password.')
@@ -21,7 +18,7 @@ RSpec.feature 'Tests for the login page', type: :feature do
     scenario 'when form is submitted with Incorrect  data' do
       within 'form' do
         fill_in 'Email', with: 'goghhjj@gmail.com'
-        fill_in  'password', with: 'goghhjhgh'
+        fill_in 'password', with: 'goghhjhgh'
       end
       button_click('Log in')
       expect(page).to have_content 'Invalid Email or password.'
@@ -33,12 +30,10 @@ RSpec.feature 'Tests for the login page', type: :feature do
 
       within 'form' do
         fill_in 'Email', with: @user3.email
-        fill_in  'password', with: @user3.password
+        fill_in 'password', with: @user3.password
       end
       button_click('Log in')
       expect(page).to have_content 'signed in successfully.'
     end
-
   end
-
 end
