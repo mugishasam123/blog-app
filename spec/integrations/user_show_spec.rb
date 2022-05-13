@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Tests for user show page', type: :feature do
+RSpec.describe 'Tests for user show page', type: :feature do
   describe 'users#show' do
     before(:each) do
       @user1 = User.create(Name: 'John', Photo: 'https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c31@user116391@user19.567197ac70bda.png',
@@ -12,14 +12,6 @@ RSpec.feature 'Tests for user show page', type: :feature do
       @post = Post.create(Title: 'second post', Text: 'test for views post-index page',
                           author_id: @user1.id)
       @post = Post.create(Title: 'third post', Text: 'test for views post-index page',
-                          author_id: @user1.id)
-      @post = Post.create(Title: 'Testing post-index page', Text: 'test for views post-index page',
-                          author_id: @user1.id)
-      @post = Post.create(Title: 'Testing post-index page', Text: 'test for views post-index page',
-                          author_id: @user1.id)
-      @post = Post.create(Title: 'Testing post-index page', Text: 'test for views post-index page',
-                          author_id: @user1.id)
-      @post = Post.create(Title: 'Testing post-index page', Text: 'test for views post-index page',
                           author_id: @user1.id)
       @post = Post.create(Title: 'Testing post-index page', Text: 'test for views post-index page',
                           author_id: @user1.id)
@@ -45,7 +37,7 @@ RSpec.feature 'Tests for user show page', type: :feature do
     end
 
     scenario 'I can see the number of posts the user has written.' do
-      expect(page).to have_content 'Number of Posts:8'
+      expect(page).to have_content 'Number of Posts:4'
     end
 
     scenario "I can see the user's bio." do
